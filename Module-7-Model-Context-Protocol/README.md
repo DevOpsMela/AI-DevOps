@@ -1,5 +1,11 @@
 ````markdown
-# MCP Server for Executing Terminal Commands
+# Module 7 - MCP Server for Executing Terminal Commands
+
+## Agenda
+
+- Model Context Protocol – Introduction ​
+- MCP Workflow – Explained​
+- DEMO – Setting UP 1st MCP Server Locally
 
 ## What is MCP?
 
