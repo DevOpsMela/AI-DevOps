@@ -1,4 +1,4 @@
-####CREWAI SETUP \####\
+#### CREWAI SETUP \####\
 \
 �� Setting Up Python and the Right Tools\
 \
@@ -32,19 +32,10 @@ uv tool update-shell\
 \
 Step 1: crewai create crew my-first-crew\
 \
-Step 1.1: Login to GROQ {for free LLM's} (https://console.groq.com/)\
-\
-Step 1.2: Create API Key (Not working with latest version of CREW
-v1.14.7)\
-\
-MODEL=groq/llama-3.1-8b-instant\
-GROQ_API_KEY=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\
-\
-\
-Step1.3: Alternatively try Azure Foundry (Tested - Working)\
+Step1.2: Alternatively try Azure Foundry (Tested - Working)\
 \
 MODEL=gpt-4.1-mini\
-OPENAI_API_KEY=F7gQHAnCcY88S441skDfUQkWgmtCUvWvCHRUVB7AI22CXz7OyNuMJQQJ99CFACYeBjFXJ3w3AAAAACOGpCP8\
+OPENAI_API_KEY=\
 OPENAI_API_BASE=https://devopsmela-ai-fdry.services.ai.azure.com/openai/v1\
 OPENAI_API_VERSION=2025-04-14\
 \
