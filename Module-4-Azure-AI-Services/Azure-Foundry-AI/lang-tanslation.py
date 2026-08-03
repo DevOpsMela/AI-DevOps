@@ -3,7 +3,7 @@ import requests
 ENDPOINT = "https://devops-openai-fdry.cognitiveservices.azure.com/"
 API_VERSION = "2025-10-01-preview"
 
-SUBSCRIPTION_KEY = "9MjzZS2KoHWBWXjLCBrK1hkC4q5ynFiwgrVMMzM4sxE7UzyjSuvlJQQJ99CFACYeBjFXJ3w3AAAAACOGr8QP"
+SUBSCRIPTION_KEY = ""
 
 def translate_text(text, targets, source_language):
     headers = {

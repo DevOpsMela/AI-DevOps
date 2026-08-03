@@ -11,7 +11,7 @@ from urllib.parse import urlparse
 parsed = urlparse(endpoint_url)
 base_endpoint = f"{parsed.scheme}://{parsed.netloc}"
 
-speech_key = "9MjzZS2KoHWBWXjLCBrK1hkC4q5ynFiwgrVMMzM4sxE7UzyjSuvlJQQJ99CFACYeBjFXJ3w3AAAAACOGr8QP"
+speech_key = ""
 speech_config = speechsdk.SpeechConfig(subscription=speech_key, endpoint=base_endpoint)
 speech_config.speech_synthesis_voice_name = "en-US-Ava:DragonHDLatestNeural"
 
