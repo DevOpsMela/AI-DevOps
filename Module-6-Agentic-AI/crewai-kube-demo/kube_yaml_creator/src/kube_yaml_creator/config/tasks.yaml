@@ -1,0 +1,10 @@
+create_nginx_manifest:
+  description: >
+    Create a Kubernetes manifest file to deploy an Nginx webapp. 
+    The manifest should include a Deployment with 3 replicas and a 
+    Service to expose it on port 80.
+  expected_output: >
+    A complete YAML manifest file containing both the Deployment and Service 
+    objects for the Nginx application.
+  agent: kube_admin
+  output_file: "manifests/nginx-deployment.yaml"
