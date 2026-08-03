@@ -13,13 +13,6 @@
 
 ---
 
-## Reference Links
-
-- https://github.com/md-adnan70/MCP
-- https://github.com/github/github-mcp-server
-
----
-
 # Step 1: Prerequisites
 
 Before configuring the Azure DevOps MCP server, ensure the following requirements are met:
