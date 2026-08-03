@@ -1,4 +1,4 @@
-# 📚 Course Agenda for Module-2 (Natural Language Processing - NLP)
+# 📚 Module-2 (Natural Language Processing - NLP)
 
 1. Deep Learning – Overview
 2. Introduction to Neural Networks

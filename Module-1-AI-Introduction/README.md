@@ -1,4 +1,4 @@
-# 📚 Course Agenda for Module-1 (AI - Introduction)
+# 📚 Module-1 (AI - Introduction)
 
 1. AI – Introduction
 2. Machine Learning – Overview
