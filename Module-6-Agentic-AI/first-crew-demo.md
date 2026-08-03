@@ -1,265 +1,140 @@
-````markdown
-# CrewAI Setup Guide
-
-## Prerequisites
-
-Before getting started, ensure you have:
-
-- Python **3.10 or higher**
-- **uv** (a fast Python package manager)
-
----
-
-# Setting Up Python and uv
-
-## Step 1: Install uv
-
-### macOS / Linux
-
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
-
-### Windows
-
-Follow the installation instructions from the official **uv** documentation.
-
-> **Note:** Restart your terminal after installation so that `uv` is recognized.
-
----
-
-## Step 2: Create a Virtual Environment
-
-```bash
-uv venv
-```
-
-### Activate the Virtual Environment
-
-#### macOS / Linux
-
-```bash
-source .venv/bin/activate
-```
-
-#### Windows
-
-```powershell
-.venv\Scripts\activate
-```
-
----
-
-## Step 3: Install CrewAI
-
-```bash
-uv tool install crewai
-```
-
----
-
-## Step 4: Verify Installation
-
-```bash
-uv tool list
-```
-
----
-
-## Step 5: Update Your Shell (Optional)
-
-If CrewAI was installed using **uv**, update your shell configuration:
-
-```bash
-uv tool update-shell
-```
-
----
-
-# Create Your First Crew
-
-## Step 1: Create a New Crew
-
-```bash
-crewai create crew my-first-crew
-```
-
----
-
-## Step 2: Configure the LLM
-
-### Option 1: Azure AI Foundry (Recommended & Tested)
-
-Create a `.env` file and add:
-
-```env
-MODEL=gpt-4.1-mini
-OPENAI_API_KEY=<YOUR_API_KEY>
-OPENAI_API_BASE=https://devopsmela-ai-fdry.services.ai.azure.com/openai/v1
-OPENAI_API_VERSION=2025-04-14
-```
-
----
-
-## Step 3: Project Structure
-
-After creating the project, you'll see the following files:
-
-| File | Purpose |
-|------|---------|
-| `agents.yaml` | Define AI agents and their roles |
-| `tasks.yaml` | Define tasks and workflows |
-| `.env` | Store API keys and environment variables |
-| `main.py` | Project entry point |
-| `crew.py` | Crew orchestration logic |
-| `tools/` | Custom agent tools |
-| `knowledge/` | Knowledge base files |
-
-### Next Steps
-
-- Edit **`agents.yaml`** to define your agents.
-- Edit **`tasks.yaml`** to define workflows.
-- Store secrets (API keys, endpoints) inside the **`.env`** file.
-
----
-
-## Step 4: Install Project Dependencies
-
-Navigate to the project directory:
-
-```bash
-cd my-first-crew
-```
-
-Install CrewAI project dependencies:
-
-```bash
-crewai install
-```
-
----
-
-## Step 5: Install Required Python Packages
-
-### FastAPI
-
-```bash
-uv pip install fastapi
-uv add fastapi
-```
-
-### APScheduler
-
-```bash
-uv pip install apscheduler
-uv add apscheduler
-```
-
----
-
-## Step 6: Run Your Crew
-
-From the project root:
-
-```bash
-crewai run
-```
-
----
-
-# Troubleshooting & Debugging
-
-## Error 1
-
-### Error Message
-
-```text
-An error occurred while running the crew:
-Fallback to LiteLLM is not available
-```
-
-### Solution
-
-```bash
-uv pip install litellm
-uv add litellm
-```
-
-### VS Code Interpreter
-
-If the error persists, ensure VS Code is using the project's virtual environment.
-
-1. Press **Command + Shift + P** (macOS) or **Ctrl + Shift + P** (Windows/Linux).
-2. Select **Python: Select Interpreter**.
-3. Choose your project's `.venv`.
-
-Example:
-
-```text
-/Users/devopsmela/Desktop/CrewAI/kube-manifest-crew/kube_manifest_crew/.venv
-```
-
----
-
-## Error 2
-
-### Error Message
-
-```text
-ImportError: Missing dependency
-No module named 'fastapi'
-```
-
-### Solution
-
-```bash
-uv pip install fastapi
-uv add fastapi
-```
-
----
-
-## Error 3
-
-### Error Message
-
-```text
-ImportError: Missing dependency
-No module named 'apscheduler'
-```
-
-### Solution
-
-```bash
-uv pip install apscheduler
-uv add apscheduler
-```
-
----
-
-## Error 4
-
-### Error Message
-
-```text
-Cache_breakpoint is unsupported
-"type":"invalid_request_error"
-```
-
-### Solution
-
-Use **Azure AI Foundry** instead of **Groq** as the LLM provider.
-
----
-
-# Summary
-
-1. Install **uv**
-2. Create and activate a virtual environment
-3. Install **CrewAI**
-4. Create a new crew
-5. Configure Azure AI Foundry
-6. Install dependencies
-7. Run the crew
-8. Refer to the troubleshooting section if any issues occur
-````
+####CREWAI SETUP \####\
+\
+�� Setting Up Python and the Right Tools\
+\
+We need Python 3.10 or higher and a tool called uv, which is a fast
+package manager for Python.\
+\
+Step 1: Install uv\
+�� Mac/Linux:\
+\
+curl -LsSf https://astral.sh/uv/install.sh \| sh\
+�� Windows: Follow the instructions at uv's installation page.\
+\
+After installation, restart your terminal so uv is recognized.\
+\
+Step 2: Set Up a Virtual Environment\
+uv venv\
+source .venv/bin/activate \# Mac/Linux\
+or\
+.venv\\Scripts\\activate \# Windows\
+\
+Step 3: Install CREWAI\
+uv tool install crewai\
+\
+Step 4: Verify Installation\
+uv tool list\
+\
+Step 5: Update shell (if CREWAI install using UV)\
+uv tool update-shell\
+\
+\#### Create 1st CREW \####\
+\
+Step 1: crewai create crew my-first-crew\
+\
+Step 1.1: Login to GROQ {for free LLM's} (https://console.groq.com/)\
+\
+Step 1.2: Create API Key (Not working with latest version of CREW
+v1.14.7)\
+\
+MODEL=groq/llama-3.1-8b-instant\
+GROQ_API_KEY=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\
+\
+\
+Step1.3: Alternatively try Azure Foundry (Tested - Working)\
+\
+MODEL=gpt-4.1-mini\
+OPENAI_API_KEY=\
+OPENAI_API_BASE=https://devopsmela-ai-fdry.services.ai.azure.com/openai/v1\
+OPENAI_API_VERSION=2025-04-14\
+\
+Step 2: Project contains esstential files\
+
+  ------------- ------------------------------------------
+  File          Purpose
+  agents.yaml   Define your AI agents and their roles
+  tasks.yaml    Set up agent tasks and workflows
+  .env          Store API keys and environment variables
+  main.py       Project entry point and execution flow
+  crew.py       Crew orchestration and coordination
+  tools/        Directory for custom agent tools
+  knowledge/    Directory for knowledge base
+  ------------- ------------------------------------------
+
+-   Start by editing agents.yaml and tasks.yaml to define your crew's
+    behavior.
+
+-   Keep sensitive information like API keys in .env.\
+    \
+    Step 3: Before you run your crew, make sure to run\
+    \
+    - cd my-first-crew\
+    - crewai install\
+    \
+    Step 4: Install below packages before run\
+    \
+    - uv pip install fastapi; uv add fastapi\
+    - uv pip install apscheduler; uv add apscheduler\
+    \
+    Step 5: To run your crew, execute the following command in the root
+    of your project\
+    \
+    - crewai run\
+    \
+    \##### Troubleshooting && Debugging \#####\
+    \
+    Error 1:\
+    \
+    - An error occurred while running the crew: Fallback to LiteLLM is
+    not available\
+    \
+    Solution:\
+    \
+    - uv pip install LiteLLM\
+    \
+    - uv add litellm\
+    \
+    Addtional:\
+    \
+    Select the .venv path for interpreter\
+    \
+    - command + shift + p ---\> Select Python Interpreter ---\> Paste
+    the .venv path\
+    \
+    - Ex:
+    /Users/devopsmela/Desktop/CrewAI/kube-manifest-crew/kube_manifest_crew/.venv\
+    \
+    Error 2:\
+    \
+    - ImportError: Missing dependency No module named \'fastapi\'\
+    \
+    Solution:\
+    \
+    - uv pip install fastapi\
+    \
+    - uv add fastapi\
+    \
+    Error 3:\
+    \
+    - ImportError: Missing dependency No module named \'apscheduler\'\
+    \
+    Solution:\
+    \
+    - uv pip install apscheduler\
+    \
+    - uv add apscheduler\
+    \
+    Error 4:\
+    \
+    - Cache_breakpoint: is
+    unsupported,\"type\":\"invalid_request_error\"\
+    \
+    Solution:\
+    \
+    - Used Azure Foundry in-place of Groq\
+    \
+    \
+    \
+    \
+    \
+    \
