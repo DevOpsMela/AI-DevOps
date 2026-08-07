@@ -12,6 +12,12 @@ You'll learn how AI can help DevOps engineers **automate repetitive tasks, troub
 
 ---
 
+👉 **Explore the course on Udemy:**
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/703c6044-ea64-4157-8773-8822f6c2cef9" />
+
+[https://udemy.com](https://www.udemy.com/course/draft/7255145/?referralCode=B43945783CC177BE75BE)
+
+---
 ## 🎯 What You'll Learn
 
 By completing this course, you'll gain practical knowledge across:
@@ -136,8 +142,3 @@ By the end of the course, you'll have a clear understanding of **how AI is chang
 **Don't just automate DevOps. Make DevOps intelligent.**
 
 Start your journey into the next generation of **AI-powered DevOps engineering.**
-
-👉 **Explore the course on Udemy:**
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/703c6044-ea64-4157-8773-8822f6c2cef9" />
-
-[https://udemy.com](https://www.udemy.com/course/draft/7255145/?referralCode=B43945783CC177BE75BE)
