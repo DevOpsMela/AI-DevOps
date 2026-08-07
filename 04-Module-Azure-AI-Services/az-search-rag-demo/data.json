@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1",
+    "content": "RAG stands for Retrieval-Augmented Generation. It combines retrieval of documents with text generation using LLMs.",
+    "category": "AI"
+  },
+  {
+    "id": "2",
+    "content": "Azure AI Search is a cloud search service that allows indexing and querying large datasets with built-in AI capabilities.",
+    "category": "Azure"
+  },
+  {
+    "id": "3",
+    "content": "Vector search allows semantic similarity search using embeddings instead of keyword matching.",
+    "category": "AI"
+  }
+]

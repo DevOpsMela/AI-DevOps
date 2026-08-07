@@ -1,0 +1,385 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2870
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 AppleColorEmoji;\f1\fnil\fcharset0 Menlo-Regular;\f2\fswiss\fcharset0 Helvetica;
+\f3\froman\fcharset0 Times-Roman;\f4\froman\fcharset0 Times-Bold;\f5\fmodern\fcharset0 Courier;
+}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue255;\red24\green24\blue24;\red27\green27\blue27;
+\red242\green242\blue242;\red89\green138\blue67;\red193\green193\blue193;\red183\green111\blue179;\red67\green192\blue160;
+\red140\green211\blue254;\red202\green202\blue202;\red194\green126\blue101;\red212\green214\blue154;\red70\green137\blue204;
+\red0\green0\blue0;\red241\green244\blue245;\red194\green126\blue101;\red24\green24\blue24;\red183\green111\blue179;
+\red67\green192\blue160;\red140\green211\blue254;\red202\green202\blue202;\red212\green214\blue154;\red70\green137\blue204;
+\red89\green138\blue67;\red66\green179\blue255;\red167\green197\blue152;}
+{\*\expandedcolortbl;;\csgray\c100000;\cssrgb\c12157\c12157\c12157;\cssrgb\c14118\c14118\c14118;
+\cssrgb\c96078\c96078\c96078;\cssrgb\c41569\c60000\c33333;\cssrgb\c80000\c80000\c80000;\cssrgb\c77255\c52549\c75294;\cssrgb\c30588\c78824\c69020;
+\cssrgb\c61176\c86275\c99608;\cssrgb\c83137\c83137\c83137;\cssrgb\c80784\c56863\c47059;\cssrgb\c86275\c86275\c66667;\cssrgb\c33725\c61176\c83922;
+\cssrgb\c0\c0\c0;\cssrgb\c95686\c96471\c96863;\cssrgb\c80784\c56863\c47059;\cssrgb\c12157\c12157\c12157;\cssrgb\c77255\c52549\c75294;
+\cssrgb\c30588\c78824\c69020;\cssrgb\c61176\c86275\c99608;\cssrgb\c83137\c83137\c83137;\cssrgb\c86275\c86275\c66667;\cssrgb\c33725\c61176\c83922;
+\cssrgb\c41569\c60000\c33333;\cssrgb\c30980\c75686\c100000;\cssrgb\c70980\c80784\c65882;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace360\levelindent0{\*\levelmarker \{circle\}}{\leveltext\leveltemplateid302\'01\uc0\u9702 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid401\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid5}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}}
+\margl1440\margr1440\vieww29700\viewh18640\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 \uc0\u55357 \u56524 
+\f1  Setting Up Python and the Right Tools\
+\
+We need Python 3.10 or higher and a tool called uv, which is a fast package manager for Python.\
+\
+Step 1: Install uv\
+
+\f0 \uc0\u55357 \u56633 
+\f1  Mac/Linux:\
+\
+curl -LsSf https://astral.sh/uv/install.sh | sh  \
+
+\f0 \uc0\u55357 \u56633 
+\f1  Windows: Follow the instructions at uv\'92s installation page.\
+\
+After installation, restart your terminal so uv is recognized.\
+\
+Step 2: Set Up a Virtual Environment\
+uv venv  \
+source .venv/bin/activate  # Mac/Linux  \
+or  \
+.venv\\Scripts\\activate     # Windows  \
+\
+Step 3: Install CREWAI\
+uv tool install crewai\
+\
+Step 4: Verify Installation \
+uv tool list\
+\
+Step5: Make sure to setup AZ CLI\
+\
+Step6: Login using AZ login command\
+
+\f2\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+#### Foundry - Working Session ####\
+\
+Step 1:  Create Azure Foundry & Project \
+	   # devopsmela-openai\
+              # devopsela-openai-proj\
+\
+Step 2: Start Building - Create an Agent (# devopsmela-openai-agent)\
+             # Select \'93gpt-nano\'94 model, it is the cheapest one\
+\
+Step 3: Integrate \'93Application Insights\'94 for monitoring purpose\
+             # Create App Insights seprately \
+             # Under Agent \'97> Monitor \'97> Connect newly created App Insights \
+\
+Step 4: Setup Agent and ready to chat\
+             # Give the below prompt as instruction\
+             # And upload all HR docs in folder 3.3\
+\
+Instructions Prompt:\
+\
+You are a helpful, policy-accurate HR assistant for Globomantics employees. You answer questions using the provided HR documents: Global Time Off and Holidays, Travel and Expense Policy, Remote Work and Mobility, Leave Types and Procedures, and HR FAQ and edge cases. Quote or summarize these policies in plain language, and tell the employee which document you used. If a question isn\'92t covered by the documents, clearly say you don\'92t know and suggest contacting HR rather than guessing or inventing new policy.\
+\
+Step 5: Test and Preview\
+             # Give the prompt for testing \cf2 \'93
+\f1 \cb3 \expnd0\expndtw0\kerning0
+What public holidays does a German citizen get?
+\f2 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+             # Preview the Agent (Application) and do the same testing in the browser \
+\
+Step 6: Authentication and RBAC\
+            # Create a \'93USER Managed Identities\'94 and give RBAC Role \'93Azure AI User\'94 at Azure Foundary level\
+\
+Step 7: Copy python code from \'97> Call Agent\
+            # Playground \'97> Call Agent \'97> Copy Python Code \
+\
+\strike \strikec0 Step 7:  Publish the Agent (Application)\
+            # Click on Publish Agent \{Note: Endpoints will be created and can only be used in Custom Application not on the browser\}\strike0\striked0 \
+\
+Step 8: Integrate with Custom Python Application\
+            # Create a folder & file stucture OpenAi \'97> 
+\f1\fs28 \cf4 \cb5 \expnd0\expndtw0\kerning0
+run_agent.py
+\f2\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+            # Paste the below code in 
+\f1\fs28 \cf4 \cb5 \expnd0\expndtw0\kerning0
+run_agent.py
+\f2\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+            # Setup uv venv && source .venv/bin/activate\
+            # Install below list of packages \
+	    - uv pip install openai\
+               - uv pip install azure.identity\
+             # 
+\f1\fs28 Select the .venv path for interpreter\
+       - command + shift + p \'97> Select Python Interpreter \'97> Paste the .venv path
+\f2\fs24 \
+            # Run \'93az login\'94 command and select the right subsctiption \
+            # python3 agent.py \{Run the application locally and look for desired output\}\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf6 \cb3 \expnd0\expndtw0\kerning0
+# Before running the sample:\cf7 \cb1 \
+\cf6 \cb3 #    pip install azure-ai-projects>=2.1.0\cf7 \cb1 \
+\
+\cf8 \cb3 from\cf7  \cf9 azure\cf7 .\cf9 identity\cf7  \cf8 import\cf7  \cf9 DefaultAzureCredential\cf7 \cb1 \
+\cf8 \cb3 from\cf7  \cf9 azure\cf7 .\cf9 ai\cf7 .\cf9 projects\cf7  \cf8 import\cf7  \cf9 AIProjectClient\cf7 \cb1 \
+\
+\cf10 \cb3 endpoint\cf7  \cf11 =\cf7  \cf12 "https://devopsmela-openai.services.ai.azure.com/api/projects/devopsela-openai-proj"\cf7 \cb1 \
+\
+\cf10 \cb3 project_client\cf7  \cf11 =\cf7  \cf9 AIProjectClient\cf7 (\cb1 \
+\cb3     \cf10 endpoint\cf11 =\cf10 endpoint\cf7 ,\cb1 \
+\cb3     \cf10 credential\cf11 =\cf9 DefaultAzureCredential\cf7 (),\cb1 \
+\cb3 )\cb1 \
+\
+\cf10 \cb3 my_agent\cf7  \cf11 =\cf7  \cf12 "devopsmela-openai-agent"\cf7 \cb1 \
+\cf10 \cb3 my_version\cf7  \cf11 =\cf7  \cf12 "3"\cf7 \cb1 \
+\
+\cf10 \cb3 openai_client\cf7  \cf11 =\cf7  \cf10 project_client\cf7 .\cf13 get_openai_client\cf7 ()\cb1 \
+\
+\cf6 \cb3 # Reference the agent to get a response\cf7 \cb1 \
+\cf10 \cb3 response\cf7  \cf11 =\cf7  \cf10 openai_client\cf7 .\cf10 responses\cf7 .\cf13 create\cf7 (\cb1 \
+\cb3     \cf10 input\cf11 =\cf7 [\{\cf12 "role"\cf7 : \cf12 "user"\cf7 , \cf12 "content"\cf7 : \cf12 "What public holidays does a German citizen get?"\cf7 \}],\cb1 \
+\cb3     \cf10 extra_body\cf11 =\cf7 \{\cf12 "agent_reference"\cf7 : \{\cf12 "name"\cf7 : \cf10 my_agent\cf7 , \cf12 "version"\cf7 : \cf10 my_version\cf7 , \cf12 "type"\cf7 : \cf12 "agent_reference"\cf7 \}\},\cb1 \
+\cb3 )\cb1 \
+\
+\cf13 \cb3 print\cf7 (\cf14 f\cf12 "Response output: \cf14 \{\cf10 response\cf7 .\cf10 output_text\cf14 \}\cf12 "\cf7 )\cb1 \
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f3 \cf0 \outl0\strokewidth0 \strokec15 This code uses the 
+\f4\b Azure AI Projects SDK
+\f3\b0  to interact with a specific 
+\f4\b AI Agent
+\f3\b0  hosted on Azure, asking it a question about German holidays. [1]\
+\pard\pardeftab720\sa331\partightenfactor0
+
+\f4\b\fs40 \cf0 Environment & Setup\
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs24 \cf0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0
+\f5\fs26 \cf0 \cb16 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec15 # pip install azure-ai-projects>=2.1.0
+\f3\fs24 \cb1 : This comment tells you to install the necessary library to communicate with Azure AI Projects.\
+\ls1\ilvl0
+\f5\fs26 \cb16 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec15 from azure.identity import DefaultAzureCredential
+\f3\fs24 \cb1 : Imports the standard Azure tool for 
+\f4\b authentication
+\f3\b0 . It automatically looks for credentials (like environment variables or logged-in VS Code accounts).\
+\ls1\ilvl0
+\f5\fs26 \cb16 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec15 from azure.ai.projects import AIProjectClient
+\f3\fs24 \cb1 : Imports the main client class used to connect to your specific 
+\f4\b Azure AI Project
+\f3\b0 .\
+\pard\pardeftab720\sa331\partightenfactor0
+
+\f4\b\fs40 \cf0 Connecting to the Project\
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs24 \cf0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0
+\f5\fs26 \cf0 \cb16 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec15 endpoint = "..."
+\f3\fs24 \cb1 : This is the 
+\f4\b URL address
+\f3\b0  for your specific Azure AI project. It tells the code exactly where to send requests.\
+\ls2\ilvl0
+\f5\fs26 \cb16 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec15 project_client = AIProjectClient(...)
+\f3\fs24 \cb1 : This line creates the connection. It uses the 
+\f5\fs26 \cb16 endpoint
+\f3\fs24 \cb1  to find the project and 
+\f5\fs26 \cb16 DefaultAzureCredential()
+\f3\fs24 \cb1  to prove you have permission to access it.\
+\pard\pardeftab720\sa331\partightenfactor0
+
+\f4\b\fs40 \cf0 Defining the Agent Reference\
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs24 \cf0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls3\ilvl0
+\f5\fs26 \cf0 \cb16 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec15 my_agent = "devops-openai-fdry-agent"
+\f3\fs24 \cb1 : Sets a variable with the 
+\f4\b unique name
+\f3\b0  of the AI agent you built in the Azure portal.\
+\ls3\ilvl0
+\f5\fs26 \cb16 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec15 my_version = "3"
+\f3\fs24 \cb1 : Specifies that you want to use 
+\f4\b version 3
+\f3\b0  of that specific agent.\
+\ls3\ilvl0
+\f5\fs26 \cb16 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec15 openai_client = project_client.get_openai_client()
+\f3\fs24 \cb1 : This creates a specialized client that allows you to use standard OpenAI-style commands while staying within the secure Azure project environment.\
+\pard\pardeftab720\sa331\partightenfactor0
+
+\f4\b\fs40 \cf0 Getting the Response\
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs24 \cf0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls4\ilvl0
+\f5\fs26 \cf0 \cb16 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec15 response = openai_client.responses.create(...)
+\f3\fs24 \cb1 : This sends the actual request to the AI.\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\partightenfactor0
+\ls4\ilvl1
+\f5\fs26 \cf0 \cb16 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u9702 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec15 input=[...]
+\f3\fs24 \cb1 : The 
+\f4\b message
+\f3\b0  you are sending (asking about German holidays).\
+\ls4\ilvl1
+\f5\fs26 \cb16 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u9702 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec15 extra_body=\{"agent_reference": ...\}
+\f3\fs24 \cb1 : This is the critical part\'97it tells Azure 
+\f4\b not
+\f3\b0  to just use a generic model, but to route this question specifically to your named agent ("devops-openai-fdry-agent").\
+\pard\tx720\pardeftab720\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa331\partightenfactor0
+
+\f4\b\fs40 \cf0 Output
+\f3\b0\fs24 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls5\ilvl0
+\f5\fs26 \cf0 \cb16 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec15 print(f"Response output: \{response.output_text\}")
+\f3\fs24 \cb1 : Takes the text generated by the agent and prints it to your console.\
+\pard\pardeftab720\partightenfactor0
+\cf0 Do you need help 
+\f4\b setting up the authentication
+\f3\b0  (DefaultAzureCredential) or would you like to see how to 
+\f4\b stream the response
+\f3\b0  instead of waiting for the full text?\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf7 \outl0\strokewidth0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97
+\f3 \cf0 \outl0\strokewidth0 \strokec15 \
+\pard\pardeftab720\sa331\partightenfactor0
+
+\f4\b\fs40 \cf0 \outl0\strokewidth0 Text to Speech - Code Setup:
+\f3\b0\fs24 \outl0\strokewidth0 \strokec15 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf17 \cb18 \strokec17 """\cf7 \cb1 \strokec7 \
+\cf17 \cb18 \strokec17 For more samples please visit https://github.com/Azure-Samples/cognitive-services-speech-sdk\cf7 \cb1 \strokec7 \
+\cf17 \cb18 \strokec17 """\cf7 \cb1 \strokec7 \
+\
+\cf19 \cb18 \strokec19 import\cf7 \strokec7  \cf20 \strokec20 azure\cf7 \strokec7 .\cf20 \strokec20 cognitiveservices\cf7 \strokec7 .\cf20 \strokec20 speech\cf7 \strokec7  \cf19 \strokec19 as\cf7 \strokec7  \cf20 \strokec20 speechsdk\cf7 \cb1 \strokec7 \
+\
+\cf21 \cb18 \strokec21 endpoint_url\cf7 \strokec7  \cf22 \strokec22 =\cf7 \strokec7  \cf17 \strokec17 "https://devops-openai-fdry.cognitiveservices.azure.com/"\cf7 \cb1 \strokec7 \
+\
+\cf19 \cb18 \strokec19 from\cf7 \strokec7  \cf20 \strokec20 urllib\cf7 \strokec7 .\cf20 \strokec20 parse\cf7 \strokec7  \cf19 \strokec19 import\cf7 \strokec7  \cf23 \strokec23 urlparse\cf7 \cb1 \strokec7 \
+\
+\cf21 \cb18 \strokec21 parsed\cf7 \strokec7  \cf22 \strokec22 =\cf7 \strokec7  \cf23 \strokec23 urlparse\cf7 \strokec7 (\cf21 \strokec21 endpoint_url\cf7 \strokec7 )\cb1 \
+\cf21 \cb18 \strokec21 base_endpoint\cf7 \strokec7  \cf22 \strokec22 =\cf7 \strokec7  \cf24 \strokec24 f\cf17 \strokec17 "\cf24 \strokec24 \{\cf21 \strokec21 parsed\cf7 \strokec7 .\cf21 \strokec21 scheme\cf24 \strokec24 \}\cf17 \strokec17 ://\cf24 \strokec24 \{\cf21 \strokec21 parsed\cf7 \strokec7 .\cf21 \strokec21 netloc\cf24 \strokec24 \}\cf17 \strokec17 "\cf7 \cb1 \strokec7 \
+\
+\cf21 \cb18 \strokec21 speech_key\cf7 \strokec7  \cf22 \strokec22 =\cf7 \strokec7  \cf17 \strokec17 "9MjzZS2KoHWBWXjLCBrK1hkC4q5ynFiwgrVMMzM4sxE7UzyjSuvlJQQJ99CFACYeBjFXJ3w3AAAAACOGr8QP"\cf7 \cb1 \strokec7 \
+\cf21 \cb18 \strokec21 speech_config\cf7 \strokec7  \cf22 \strokec22 =\cf7 \strokec7  \cf20 \strokec20 speechsdk\cf7 \strokec7 .\cf20 \strokec20 SpeechConfig\cf7 \strokec7 (\cf21 \strokec21 subscription\cf22 \strokec22 =\cf21 \strokec21 speech_key\cf7 \strokec7 , \cf21 \strokec21 endpoint\cf22 \strokec22 =\cf21 \strokec21 base_endpoint\cf7 \strokec7 )\cb1 \
+\cf21 \cb18 \strokec21 speech_config\cf7 \strokec7 .\cf21 \strokec21 speech_synthesis_voice_name\cf7 \strokec7  \cf22 \strokec22 =\cf7 \strokec7  \cf17 \strokec17 "en-US-Ava:DragonHDLatestNeural"\cf7 \cb1 \strokec7 \
+\
+\cf25 \cb18 \strokec25 # use the default speaker as audio output.\cf7 \cb1 \strokec7 \
+\cf21 \cb18 \strokec21 speech_synthesizer\cf7 \strokec7  \cf22 \strokec22 =\cf7 \strokec7  \cf20 \strokec20 speechsdk\cf7 \strokec7 .\cf20 \strokec20 SpeechSynthesizer\cf7 \strokec7 (\cf21 \strokec21 speech_config\cf22 \strokec22 =\cf21 \strokec21 speech_config\cf7 \strokec7 )\cb1 \
+\
+\cf21 \cb18 \strokec21 text\cf7 \strokec7  \cf22 \strokec22 =\cf7 \strokec7  \cf17 \strokec17 "Hello, Rohit! What are you doing today?"\cf7 \cb1 \strokec7 \
+\
+\cf21 \cb18 \strokec21 result\cf7 \strokec7  \cf22 \strokec22 =\cf7 \strokec7  \cf21 \strokec21 speech_synthesizer\cf7 \strokec7 .\cf23 \strokec23 speak_text_async\cf7 \strokec7 (\cf21 \strokec21 text\cf7 \strokec7 ).\cf23 \strokec23 get\cf7 \strokec7 ()\cb1 \
+\cf25 \cb18 \strokec25 # Check result\cf7 \cb1 \strokec7 \
+\cf19 \cb18 \strokec19 if\cf7 \strokec7  \cf21 \strokec21 result\cf7 \strokec7 .reason \cf22 \strokec22 ==\cf7 \strokec7  \cf20 \strokec20 speechsdk\cf7 \strokec7 .\cf20 \strokec20 ResultReason\cf7 \strokec7 .\cf26 \strokec26 SynthesizingAudioCompleted\cf7 \strokec7 :\cb1 \
+\cb18     \cf23 \strokec23 print\cf7 \strokec7 (\cf17 \strokec17 "Speech synthesized for text [\cf24 \strokec24 \{\}\cf17 \strokec17 ]"\cf7 \strokec7 .\cf23 \strokec23 format\cf7 \strokec7 (\cf21 \strokec21 text\cf7 \strokec7 ))\cb1 \
+\cf19 \cb18 \strokec19 elif\cf7 \strokec7  \cf21 \strokec21 result\cf7 \strokec7 .reason \cf22 \strokec22 ==\cf7 \strokec7  \cf20 \strokec20 speechsdk\cf7 \strokec7 .\cf20 \strokec20 ResultReason\cf7 \strokec7 .\cf26 \strokec26 Canceled\cf7 \strokec7 :\cb1 \
+\cb18     \cf21 \strokec21 cancellation_details\cf7 \strokec7  \cf22 \strokec22 =\cf7 \strokec7  \cf21 \strokec21 result\cf7 \strokec7 .cancellation_details\cb1 \
+\cb18     \cf23 \strokec23 print\cf7 \strokec7 (\cf17 \strokec17 "Speech synthesis canceled: \cf24 \strokec24 \{\}\cf17 \strokec17 "\cf7 \strokec7 .\cf23 \strokec23 format\cf7 \strokec7 (\cf21 \strokec21 cancellation_details\cf7 \strokec7 .reason))\cb1 \
+\cb18     \cf19 \strokec19 if\cf7 \strokec7  \cf21 \strokec21 cancellation_details\cf7 \strokec7 .reason \cf22 \strokec22 ==\cf7 \strokec7  \cf20 \strokec20 speechsdk\cf7 \strokec7 .\cf20 \strokec20 CancellationReason\cf7 \strokec7 .\cf26 \strokec26 Error\cf7 \strokec7 :\cb1 \
+\cb18         \cf23 \strokec23 print\cf7 \strokec7 (\cf17 \strokec17 "Error details: \cf24 \strokec24 \{\}\cf17 \strokec17 "\cf7 \strokec7 .\cf23 \strokec23 format\cf7 \strokec7 (\cf21 \strokec21 cancellation_details\cf7 \strokec7 .error_details))\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf7 \outl0\strokewidth0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97
+\f3 \cf0 \
+\pard\pardeftab720\sa331\partightenfactor0
+
+\f4\b\fs40 \cf0 Langauge Translation - Code Setup:
+\f3\b0\fs24 \outl0\strokewidth0 \strokec15 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf7 \outl0\strokewidth0 \
+\pard\pardeftab720\partightenfactor0
+\cf19 \cb18 \outl0\strokewidth0 \strokec19 import\cf7 \strokec7  \cf20 \strokec20 requests\cf7 \cb1 \strokec7 \
+\cb18  \cb1 \
+\cf26 \cb18 \strokec26 ENDPOINT\cf7 \strokec7  \cf22 \strokec22 =\cf7 \strokec7  \cf17 \strokec17 "https://devops-openai-fdry.cognitiveservices.azure.com/"\cf7 \cb1 \strokec7 \
+\cf26 \cb18 \strokec26 API_VERSION\cf7 \strokec7  \cf22 \strokec22 =\cf7 \strokec7  \cf17 \strokec17 "2025-10-01-preview"\cf7 \cb1 \strokec7 \
+\
+\cf26 \cb18 \strokec26 SUBSCRIPTION_KEY\cf7 \strokec7  \cf22 \strokec22 =\cf7 \strokec7  \cf17 \strokec17 "9MjzZS2KoHWBWXjLCBrK1hkC4q5ynFiwgrVMMzM4sxE7UzyjSuvlJQQJ99CFACYeBjFXJ3w3AAAAACOGr8QP"\cf7 \cb1 \strokec7 \
+\
+\cf24 \cb18 \strokec24 def\cf7 \strokec7  \cf23 \strokec23 translate_text\cf7 \strokec7 (\cf21 \strokec21 text\cf7 \strokec7 , \cf21 \strokec21 targets\cf7 \strokec7 , \cf21 \strokec21 source_language\cf7 \strokec7 ):\cb1 \
+\cb18     \cf21 \strokec21 headers\cf7 \strokec7  \cf22 \strokec22 =\cf7 \strokec7  \{\cb1 \
+\cb18         \cf17 \strokec17 "Ocp-Apim-Subscription-Key"\cf7 \strokec7 : \cf26 \strokec26 SUBSCRIPTION_KEY\cf7 \strokec7 ,\cb1 \
+\cb18         \cf17 \strokec17 "Content-Type"\cf7 \strokec7 : \cf17 \strokec17 "application/json"\cf7 \cb1 \strokec7 \
+\cb18     \}\cb1 \
+\cb18     \cf21 \strokec21 url\cf7 \strokec7  \cf22 \strokec22 =\cf7 \strokec7  \cf24 \strokec24 f\cf17 \strokec17 "\cf24 \strokec24 \{\cf26 \strokec26 ENDPOINT\cf24 \strokec24 \}\cf17 \strokec17 /translator/text/translate?api-version=\cf24 \strokec24 \{\cf26 \strokec26 API_VERSION\cf24 \strokec24 \}\cf17 \strokec17 "\cf7 \cb1 \strokec7 \
+\cb18     \cf21 \strokec21 body\cf7 \strokec7  \cf22 \strokec22 =\cf7 \strokec7  \{\cb1 \
+\cb18         \cf17 \strokec17 "inputs"\cf7 \strokec7 : [\cb1 \
+\cb18             \{\cb1 \
+\cb18                 \cf17 \strokec17 "Text"\cf7 \strokec7 : \cf21 \strokec21 text\cf7 \strokec7 ,\cb1 \
+\cb18                 \cf17 \strokec17 "language"\cf7 \strokec7 : \cf21 \strokec21 source_language\cf7 \strokec7 ,\cb1 \
+\cb18                 \cf17 \strokec17 "targets"\cf7 \strokec7 : \cf21 \strokec21 targets\cf7 \cb1 \strokec7 \
+\cb18             \}\cb1 \
+\cb18         ]\cb1 \
+\cb18     \}\cb1 \
+\
+\cb18     \cf21 \strokec21 response\cf7 \strokec7  \cf22 \strokec22 =\cf7 \strokec7  \cf20 \strokec20 requests\cf7 \strokec7 .\cf23 \strokec23 post\cf7 \strokec7 (\cf21 \strokec21 url\cf7 \strokec7 , \cf21 \strokec21 headers\cf22 \strokec22 =\cf21 \strokec21 headers\cf7 \strokec7 , \cf21 \strokec21 json\cf22 \strokec22 =\cf21 \strokec21 body\cf7 \strokec7 )\cb1 \
+\cb18     \cf21 \strokec21 response\cf7 \strokec7 .\cf23 \strokec23 raise_for_status\cf7 \strokec7 ()\cb1 \
+\cb18     \cf19 \strokec19 return\cf7 \strokec7  \cf21 \strokec21 response\cf7 \strokec7 .\cf23 \strokec23 json\cf7 \strokec7 ()\cb1 \
+\cb18  \cb1 \
+\cf24 \cb18 \strokec24 def\cf7 \strokec7  \cf23 \strokec23 main\cf7 \strokec7 ():\cb1 \
+\cb18     \cf21 \strokec21 text\cf7 \strokec7  \cf22 \strokec22 =\cf7 \strokec7  \cf17 \strokec17 "Doctor is available next Monday. Do you want to schedule an appointment?"\cf7 \cb1 \strokec7 \
+\cb18     \cf21 \strokec21 targets\cf7 \strokec7  \cf22 \strokec22 =\cf7 \strokec7  [\cb1 \
+\cb18         \{\cf17 \strokec17 "language"\cf7 \strokec7 : \cf17 \strokec17 "es"\cf7 \strokec7 ,\},\cb1 \
+\cb18         \{\cf17 \strokec17 "language"\cf7 \strokec7 : \cf17 \strokec17 "hi"\cf7 \strokec7 , \}\cb1 \
+\cb18     ]\cb1 \
+\cb18     \cf21 \strokec21 source_language\cf7 \strokec7  \cf22 \strokec22 =\cf7 \strokec7  \cf17 \strokec17 "en"\cf7 \cb1 \strokec7 \
+\cb18     \cf19 \strokec19 try\cf7 \strokec7 :\cb1 \
+\cb18         \cf21 \strokec21 result\cf7 \strokec7  \cf22 \strokec22 =\cf7 \strokec7  \cf23 \strokec23 translate_text\cf7 \strokec7 (\cf21 \strokec21 text\cf7 \strokec7 , \cf21 \strokec21 targets\cf7 \strokec7 ,\cf21 \strokec21 source_language\cf7 \strokec7 )\cb1 \
+\
+\cb18         \cf19 \strokec19 for\cf7 \strokec7  \cf21 \strokec21 t\cf7 \strokec7  \cf19 \strokec19 in\cf7 \strokec7  \cf21 \strokec21 result\cf7 \strokec7 [\cf17 \strokec17 "value"\cf7 \strokec7 ][\cf27 \cb18 \strokec27 0\cf7 \cb18 \strokec7 ][\cf17 \strokec17 "translations"\cf7 \strokec7 ]:\cb1 \
+\cb18             \cf23 \strokec23 print\cf7 \strokec7 (\cf24 \strokec24 f\cf17 \strokec17 "Translation (\cf24 \strokec24 \{\cf21 \strokec21 t\cf7 \strokec7 [\cf17 \strokec17 'language'\cf7 \strokec7 ]\cf24 \strokec24 \}\cf17 \strokec17 ): \cf24 \strokec24 \{\cf21 \strokec21 t\cf7 \strokec7 [\cf17 \strokec17 'text'\cf7 \strokec7 ]\cf24 \strokec24 \}\cf17 \strokec17 "\cf7 \strokec7 )\cb1 \
+\cb18     \cf19 \strokec19 except\cf7 \strokec7  \cf20 \strokec20 Exception\cf7 \strokec7  \cf19 \strokec19 as\cf7 \strokec7  \cf21 \strokec21 e\cf7 \strokec7 :\cb1 \
+\cb18         \cf23 \strokec23 print\cf7 \strokec7 (\cf24 \strokec24 f\cf17 \strokec17 "Translation failed: \cf24 \strokec24 \{\cf21 \strokec21 e\cf24 \strokec24 \}\cf17 \strokec17 "\cf7 \strokec7 )\cb1 \
+\cb18  \cb1 \
+\cf19 \cb18 \strokec19 if\cf7 \strokec7  \cf21 \strokec21 __name__\cf7 \strokec7  \cf22 \strokec22 ==\cf7 \strokec7  \cf17 \strokec17 "__main__"\cf7 \strokec7 :\cb1 \
+\cb18     \cf23 \strokec23 main\cf7 \strokec7 ()\cb1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f2 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf7 \expnd0\expndtw0\kerning0
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97
+\f3 \cf0 \
+\pard\pardeftab720\sa331\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+\
+\
+}

@@ -1,0 +1,275 @@
+# 📄 1. Sample Data for RAG (Upload this)
+
+Create a file: **`data.json`**
+
+```json
+[
+  {
+    "id": "1",
+    "content": "RAG stands for Retrieval-Augmented Generation. It combines retrieval of documents with text generation using LLMs.",
+    "category": "AI"
+  },
+  {
+    "id": "2",
+    "content": "Azure AI Search is a cloud search service that allows indexing and querying large datasets with built-in AI capabilities.",
+    "category": "Azure"
+  },
+  {
+    "id": "3",
+    "content": "Vector search allows semantic similarity search using embeddings instead of keyword matching.",
+    "category": "AI"
+  }
+]
+```
+
+---
+
+# ⚙️ 2. Azure Setup (High Level)
+
+You need:
+
+1. Create **Azure AI Search service**
+2. Create **Index**
+3. Upload data
+4. Enable **Vector Search**
+5. Use embeddings from:
+
+   * Azure OpenAI Service
+
+---
+
+# 🧱 3. Install Python Dependencies
+
+```bash
+pip install azure-search-documents openai python-dotenv
+```
+
+---
+
+# 🔐 4. Environment Variables (.env)
+
+```env
+AZURE_SEARCH_ENDPOINT=
+AZURE_SEARCH_KEY=
+AZURE_SEARCH_INDEX=rag-demo-index
+
+AZURE_OPENAI_ENDPOINT=https://meladevops-5790-resource.services.ai.azure.com/
+AZURE_OPENAI_KEY=
+AZURE_OPENAI_DEPLOYMENT=gpt-4o-mini
+AZURE_OPENAI_EMBEDDING_DEPLOYMENT=text-embedding-3-small
+```
+
+---
+
+# 🧾 5. Create Index (Python)
+
+```python
+from azure.search.documents.indexes import SearchIndexClient
+from azure.search.documents.indexes.models import SearchField
+from azure.search.documents.indexes.models import (
+    SearchIndex, SimpleField, SearchableField, VectorSearch,
+    HnswAlgorithmConfiguration, VectorSearchProfile
+)
+from azure.core.credentials import AzureKeyCredential
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+endpoint = os.getenv("AZURE_SEARCH_ENDPOINT")
+key = os.getenv("AZURE_SEARCH_KEY")
+
+index_client = SearchIndexClient(endpoint, AzureKeyCredential(key))
+
+index = SearchIndex(
+    name="rag-demo-index",
+fields=[
+    SimpleField(name="id", type="Edm.String", key=True),
+    SearchableField(name="content", type="Edm.String"),
+    SearchableField(name="category", type="Edm.String"),
+    SearchField(   # ✅ FIXED
+        name="contentVector",
+        type="Collection(Edm.Single)",
+        searchable=True,
+        vector_search_dimensions=1536,
+        vector_search_profile_name="my-vector-profile"
+    )
+],
+    vector_search=VectorSearch(
+        profiles=[VectorSearchProfile(
+            name="my-vector-profile",
+            algorithm_configuration_name="my-algo"
+        )],
+        algorithms=[HnswAlgorithmConfiguration(name="my-algo")]
+    )
+)
+
+index_client.create_or_update_index(index)
+print("Index created!")
+```
+
+---
+
+# 🔢 6. Upload Data with Embeddings
+
+```python
+from azure.search.documents import SearchClient
+from azure.core.credentials import AzureKeyCredential
+from openai import AzureOpenAI
+import os
+import json
+from dotenv import load_dotenv
+
+# Load env variables
+load_dotenv()
+
+endpoint = os.getenv("AZURE_SEARCH_ENDPOINT")
+key = os.getenv("AZURE_SEARCH_KEY")
+
+search_client = SearchClient(endpoint, "rag-demo-index", AzureKeyCredential(key))
+
+openai_client = AzureOpenAI(
+    api_key=os.getenv("AZURE_OPENAI_KEY"),
+    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
+    api_version="2024-02-01"
+)
+
+## verify env variables
+# print("ENDPOINT:", os.getenv("AZURE_OPENAI_ENDPOINT"))
+# print("DEPLOYMENT:", os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT"))
+
+# Load data
+with open("data.json") as f:
+    docs = json.load(f)
+
+def get_embedding(text):
+    response = openai_client.embeddings.create(
+        model=os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT"),
+        input=text
+    )
+    return response.data[0].embedding
+
+# Add embeddings
+for doc in docs:
+    doc["contentVector"] = get_embedding(doc["content"])
+
+# Upload
+result = search_client.upload_documents(docs)
+
+for r in result:
+    print(r.succeeded, r.key, r.error_message)
+
+print("Documents uploaded!")
+```
+
+---
+
+# 🔍 7. RAG Query Logic
+
+```python
+import os
+from dotenv import load_dotenv
+from openai import AzureOpenAI
+from azure.search.documents import SearchClient
+from azure.search.documents.models import VectorizedQuery
+from azure.core.credentials import AzureKeyCredential
+
+load_dotenv()
+
+# Azure AI Search client
+search_client = SearchClient(
+    endpoint=os.getenv("AZURE_SEARCH_ENDPOINT"),
+    index_name="rag-demo-index",
+    credential=AzureKeyCredential(os.getenv("AZURE_SEARCH_KEY"))
+)
+
+# Azure OpenAI client
+openai_client = AzureOpenAI(
+    api_key=os.getenv("AZURE_OPENAI_KEY"),
+    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
+    api_version="2024-05-01-preview"
+)
+
+def get_embedding(text):
+    response = openai_client.embeddings.create(
+        model=os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT"),
+        input=text
+    )
+    return response.data[0].embedding
+
+def search_documents(query):
+    embedding = get_embedding(query)
+
+    vector_query = VectorizedQuery(
+        vector=embedding,
+        k_nearest_neighbors=3,
+        fields="contentVector"
+    )
+
+    results = search_client.search(
+        search_text=None,
+        vector_queries=[vector_query]
+    )
+
+    return [doc["content"] for doc in results]
+
+def generate_answer(query, context_docs):
+    context = "\n".join(context_docs)
+
+    prompt = f"""
+    Answer the question using only the context below:
+
+    Context:
+    {context}
+
+    Question:
+    {query}
+    """
+
+    response = openai_client.chat.completions.create(
+        model=os.getenv("AZURE_OPENAI_DEPLOYMENT"),
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": prompt}
+        ]
+    )
+    
+    return response.choices[0].message.content
+
+# Test OpenAI connection
+# response = openai_client.chat.completions.create(
+#     model="gpt-4o-mini",
+#     messages=[{"role": "user", "content": "Hello"}]
+# )
+
+# print(response.choices[0].message.content)
+
+# Main logic - retrieve relevant documents and generate answer
+query = "What is RAG?"
+
+docs = search_documents(query)
+answer = generate_answer(query, docs)
+
+print("Answer:\n", answer)
+```
+---
+
+# ▶️ 8. Run Locally (Test)
+
+```python
+query = "What is RAG?"
+
+docs = search_documents(query)
+answer = generate_answer(query, docs)
+
+print("Answer:\n", answer)
+```
+---
+
+# ✅ Output Example
+
+```
+RAG stands for Retrieval-Augmented Generation. It combines retrieving relevant documents with generating answers using language models.
+```
+---
+
