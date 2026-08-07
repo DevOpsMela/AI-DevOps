@@ -138,4 +138,6 @@ By the end of the course, you'll have a clear understanding of **how AI is chang
 Start your journey into the next generation of **AI-powered DevOps engineering.**
 
 👉 **Explore the course on Udemy:**
-https://udemy.com
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/703c6044-ea64-4157-8773-8822f6c2cef9" />
+
+[https://udemy.com](https://www.udemy.com/course/draft/7255145/?referralCode=B43945783CC177BE75BE)
